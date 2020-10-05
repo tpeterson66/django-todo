@@ -10,7 +10,7 @@ services:
     networks:
         - backend
     environment:
-        - POSTGRES_PASSWORD="thisSuperSECUREPassword2020!"
+        - POSTGRES_PASSWORD=thisSuperSECUREPassword2020!
 
 
   app:
