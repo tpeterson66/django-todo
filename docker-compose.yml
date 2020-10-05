@@ -27,7 +27,7 @@ services:
         - POSTGRES_NAME=TodoDB
         - POSTGRES_USER=postgres
         - POSTGRES_PASSWORD=thisSuperSECUREPassword2020!
-        - POSTGRES_HOST=db
+        - POSTGRES_HOST=172.18.0.3
         - POSTGRES_PORT=5432
 
 networks:
