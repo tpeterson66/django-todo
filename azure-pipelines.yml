@@ -28,14 +28,6 @@ stages:
         command: 'build'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
-- stage: Push
-  displayName: Push image to Docker Hub
-  jobs:  
-  - job: Push
-    displayName: Docker Push to Docker Hub
-    pool:
-      vmImage: 'ubuntu-latest'
-    steps:
     - task: Docker@2
       displayName: Docker Login
       inputs:
@@ -54,3 +46,11 @@ stages:
         repository: 'tpeterson66/django-todo'
         command: 'push'
         tags: 'latest'
+# - stage: Push
+#   displayName: Push image to Docker Hub
+#   jobs:  
+#   - job: Push
+#     displayName: Docker Push to Docker Hub
+#     pool:
+#       vmImage: 'ubuntu-latest'
+#     steps:
