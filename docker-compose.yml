@@ -8,14 +8,11 @@ services:
     networks:
         - backend
     environment:
-      - POSTGRES_NAME=TodoDB
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD="thisSuperSECUREPassword2020!"
-      - POSTGRES_HOST="10.132.0.2"
-      - POSTGRES_PORT=5432
+        - POSTGRES_PASSWORD="thisSuperSECUREPassword2020!"
+
 
   app:
-    image: tpeterson66/django:latest
+    image: tpeterson66/django-todo:latest
     container_name: django-todo
     restart: always
     networks:
@@ -25,8 +22,11 @@ services:
     volumes:
         - ./db-data:var/lib/postgresql/data
     environment:
-        POSTGRES_PASSWORD: "thisSuperSECUREPassword2020!"
-        POSTGRES_HOST: db
+        - POSTGRES_NAME=TodoDB
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD="thisSuperSECUREPassword2020!"
+        - POSTGRES_HOST="10.132.0.2"
+        - POSTGRES_PORT=5432
 
 networks:
     backend:
