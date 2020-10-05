@@ -27,7 +27,9 @@ stages:
         repository: 'tpeterson66/django-todo'
         command: 'build'
         Dockerfile: '**/Dockerfile'
-        tags: '$(tag)'
+        tags: |
+          $(tag)
+          latest
     - task: Docker@2
       displayName: Docker Login
       inputs:
