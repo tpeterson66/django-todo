@@ -1,0 +1,32 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres
+    container_name: postgres
+    restart: always
+    networks:
+        - backend
+    environment:
+        ENV POSTGRES_NAME=TodoDB
+        ENV POSTGRES_USER=postgres
+        ENV POSTGRES_PASSWORD="thisSuperSECUREPassword2020!"
+        ENV POSTGRES_HOST="10.172.192.62"
+        ENV POSTGRES_PORT=5432
+
+  app:
+    image: tpeterson66/django:latest
+    container_name: django-todo
+    restart: always
+    networks:
+        - backend
+    ports: 
+        - 8000:8000
+    volumes:
+        - ./db-data:var/lib/postgresql/data
+    environment:
+        POSTGRES_PASSWORD: "thisSuperSECUREPassword2020!"
+        POSTGRES_HOST: db
+
+networks:
+    backend:
