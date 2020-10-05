@@ -8,11 +8,11 @@ services:
     networks:
         - backend
     environment:
-        POSTGRES_NAME=TodoDB
-        POSTGRES_USER=postgres
-        POSTGRES_PASSWORD="thisSuperSECUREPassword2020!"
-        POSTGRES_HOST="10.132.0.2"
-        POSTGRES_PORT=5432
+      - POSTGRES_NAME=TodoDB
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD="thisSuperSECUREPassword2020!"
+      - POSTGRES_HOST="10.132.0.2"
+      - POSTGRES_PORT=5432
 
   app:
     image: tpeterson66/django:latest
