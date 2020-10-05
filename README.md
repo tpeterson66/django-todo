@@ -133,3 +133,7 @@ http://localhost:8000/todos/list
 ```
 
 You should see a simple to-do application that you can add and remove items from the application. Notice the data persists when you exit the application since the values are stored in the database.
+
+## Disclamier
+
+This is intended to be educational only and is not intended to provide best practices for production applications. Use at your own risk.
