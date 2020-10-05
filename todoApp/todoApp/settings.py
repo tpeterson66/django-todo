@@ -26,7 +26,7 @@ SECRET_KEY = 'hqc^pe4*_2@8w0dihmnn#_qte&zrz^$7d-k8o_z^+t4hj1s!ip'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['descase.tpeterson.io:8000']
 
 
 # Application definition
