@@ -29,6 +29,8 @@ services:
         - POSTGRES_PASSWORD=thisSuperSECUREPassword2020!
         - POSTGRES_HOST=172.18.0.3
         - POSTGRES_PORT=5432
+    depends_on:
+        - db
 
 networks:
     backend:
