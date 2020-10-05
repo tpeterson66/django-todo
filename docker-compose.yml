@@ -11,6 +11,7 @@ services:
         - backend
     environment:
         - POSTGRES_PASSWORD=thisSuperSECUREPassword2020!
+        - POSTGRES_DB=TodoDB
 
   app:
     image: tpeterson66/django-todo:latest
