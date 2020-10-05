@@ -8,4 +8,4 @@ ENV POSTGRES_USER=postgres
 ENV POSTGRES_PASSWORD=password
 ENV POSTGRES_HOST=localhost
 ENV POSTGRES_PORT=5432
-CMD [ "python", ".todoApp/manage.py", "runserver", "0.0.0.0:8000" ]
+CMD [ "python", "./todoApp/manage.py", "runserver", "0.0.0.0:8000" ]
