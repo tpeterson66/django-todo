@@ -58,3 +58,9 @@ In the portal, application settings can be found under configuration. In the con
 * POSTGRES_USER
 
 These settings tell the application about the Postgres database. All of these settings can be found in the database section and provided. The host is the server name of the Postgres server, the username must include the username@hostname including the FQDN. The port, by default is 5432 and the username was provided when creating the server.
+
+## CI/CD for App Services
+
+The majority of this can be automated using CI/CD to build the docker container, store it in Docker Hub or Azure Container Registry and then restart the app service to start serving the new application. Scripts or tooling can be added to aid in the configuration of the app service as well including App Settings or Environment Variables for the container.
+
+App Services also support slots, which can be used to do blue/green deployments before fully rolling the code out to the entire environment. This can be used in a larger CI/CD process where the application is rolled out and verified using some testing before it is fully released to the environment.
