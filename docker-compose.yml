@@ -14,7 +14,7 @@ services:
         - POSTGRES_DB=TodoDB
 
   app:
-    image: tpeterson66/django-todo:latest
+    build: ./
     container_name: django-todo
     restart: always
     networks:
@@ -25,9 +25,9 @@ services:
         - /root/django-todo/db-data:/var/lib/postgresql/data
     environment:
         - POSTGRES_NAME=TodoDB
-        - POSTGRES_USER=postgres
+        - POSTGRES_USER=postgres@django-demo-db.postgres.database.azure.com
         - POSTGRES_PASSWORD=thisSuperSECUREPassword2020!
-        - POSTGRES_HOST=db
+        - POSTGRES_HOST=django-demo-db.postgres.database.azure.com
         - POSTGRES_PORT=5432
     depends_on:
         - db
